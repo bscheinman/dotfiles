@@ -24,6 +24,8 @@ main = do
         , ((mod4Mask .|. shiftMask, xK_l), spawn "xscreensaver-command -lock")
         , ((mod4Mask .|. shiftMask, xK_h), spawn "sudo /usr/sbin/pm-hibernate")
         , ((mod4Mask .|. shiftMask, xK_s), spawn "sudo /usr/sbin/pm-suspend")
+        , ((mod4Mask , xK_F1), spawn "amixer sset Master 5-")
+        , ((mod4Mask , xK_F2), spawn "amixer sset Master 5+")
         ]
 
 tallLayout = Tall 1 (3/100) (1/2)
