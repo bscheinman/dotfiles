@@ -26,8 +26,9 @@ main = do
         , ((mod4Mask .|. shiftMask, xK_s), spawn "sudo /usr/sbin/pm-suspend")
         ]
 
+tallLayout = Tall 1 (3/100) (1/2)
 myLayoutHook = avoidStrutsOn [U] (
-        Tall 1 (3/100) (1/2)
-    ||| named "Wide" (Mirror (Tall 1 (3/100) (1/2)))
+        tallLayout
+    ||| named "Wide" (Mirror tallLayout)
     ||| Full
     ||| Grid)
