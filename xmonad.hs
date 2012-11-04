@@ -23,7 +23,6 @@ main = do
         , ((mod4Mask .|. shiftMask, xK_l), spawn "xscreensaver-command -lock")
         , ((mod4Mask .|. shiftMask, xK_h), spawn "sudo /usr/sbin/pm-hibernate")
         , ((mod4Mask .|. shiftMask, xK_s), spawn "sudo /usr/sbin/pm-suspend")
-        , ((mod4Mask .|. shiftMask, xK_z), sendMessage $ ToggleStrut R)
         ]
 
 myLayoutHook = avoidStrutsOn [U] (
