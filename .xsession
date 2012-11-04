@@ -1,0 +1,15 @@
+#!/bin/bash
+ 
+xrdb -merge .Xresources
+ 
+trayer --edge top --align right --SetDockType true --SetPartialStrut true \
+ --expand true --width 10 --transparent true --tint 0x000000 --height 12 &
+ 
+xsetroot -solid black
+xscreensaver -no-splash &
+ 
+if [ -x /usr/bin/nm-applet ] ; then
+   nm-applet --sm-disable &
+fi
+ 
+exec xmonad

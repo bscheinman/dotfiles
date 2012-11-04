@@ -1,0 +1,14 @@
+Config { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
+       , bgColor = "black"
+       , fgColor = "grey"
+       , position = TopW L 90
+       , commands = [ Run Cpu ["-L","10","-H","25","--normal","green","--high","red"] 10
+                    , Run Memory ["-t","Mem: <usedratio>%"] 10
+                    , Run Date "%d/%m/%y %H:%M" "date" 10
+                    , Run Battery ["-t", "<acstatus> <left>%", "--", "-c", "energy_full", "-O", "<fc=green>AC</fc>", "-o", "<fc=orange>BATTERY</fc>"] 10
+                    , Run StdinReader
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% }{ %cpu% | %memory% | %battery%    <fc=orange>%date%</fc>"
+       }
