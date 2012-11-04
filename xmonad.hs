@@ -2,6 +2,7 @@ import XMonad
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Layout.Grid
+import XMonad.Layout.Named
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
 import System.IO
@@ -27,5 +28,6 @@ main = do
 
 myLayoutHook = avoidStrutsOn [U] (
         Tall 1 (3/100) (1/2)
+    ||| named "Wide" (Mirror (Tall 1 (3/100) (1/2)))
     ||| Full
     ||| Grid)
