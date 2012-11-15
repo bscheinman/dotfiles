@@ -21,6 +21,7 @@ main = do
         , focusedBorderColor = "#000000"
         } `additionalKeys`
         [ ((mod4Mask .|. shiftMask, xK_a), spawn "chromium-browser")
+        , ((mod4Mask .|. shiftMask, xK_z), spawn "chromium-browser --incognito")
         , ((mod4Mask .|. shiftMask, xK_l), spawn "xscreensaver-command -lock")
         , ((mod4Mask .|. shiftMask, xK_h), spawn "sudo /usr/sbin/pm-hibernate")
         , ((mod4Mask .|. shiftMask, xK_s), spawn "sudo /usr/sbin/pm-suspend")
