@@ -17,9 +17,15 @@ if has('gui_running')
 else
 	set t_Co=256
 	colorscheme zellner
+
+	nmap <silent><C-l> gt
+	imap <silent><C-l> <ESC>gti
+	nmap <silent><C-h> gT
+	imap <silent><C-h> <ESC>gTi
 endif
 set colorcolumn=80
 set laststatus=2
+set number
 
 let mapleader = "'"
 
@@ -28,14 +34,21 @@ nmap <silent><leader>j <C-w>j
 nmap <silent><leader>k <C-w>k
 nmap <silent><leader>l <C-w>l
 
+" half page up/down
 nmap <silent>J Lzz
 nmap <silent>K Hzz
 nmap <leader>r :%s/<C-r><C-w>/
 
-nmap <silent><leader>z :NERDTreeToggle<cr>
+" todo lists
+nmap <silent><leader>n Go!!<Space>
+nmap <silent><leader>x :s/^!!/xx<CR>:w<CR>
+
+nmap <silent><leader>z :NERDTreeToggle<CR>
 nmap <leader>a :cscope find g 
 
 set wildignore+=*.o
+
+let g:gitgutter_max_signs=10000
 
 command W w
 command Q q
