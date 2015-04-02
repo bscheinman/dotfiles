@@ -23,9 +23,12 @@ else
 	nmap <silent><C-h> gT
 	imap <silent><C-h> <ESC>gTi
 endif
+
 set colorcolumn=80
 set laststatus=2
 set number
+set scrolloff=8
+set relativenumber
 
 let mapleader = "'"
 
@@ -38,6 +41,12 @@ nmap <silent><leader>l <C-w>l
 nmap <silent>J Lzz
 nmap <silent>K Hzz
 nmap <leader>r :%s/<C-r><C-w>/
+
+" move screen single line up/down
+nmap <silent><C-j> <C-e>
+nmap <silent><C-k> <C-y>
+imap <silent><C-j> <ESC><C-y>a
+imap <silent><C-k> <ESC><C-e>a
 
 " todo lists
 nmap <silent><leader>n Go!!<Space>
