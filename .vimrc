@@ -24,11 +24,10 @@ else
 	imap <silent><C-h> <ESC>gTi
 endif
 
-set colorcolumn=80
+set colorcolumn=81
 set laststatus=2
 set number
 set scrolloff=8
-set relativenumber
 
 let mapleader = "'"
 
