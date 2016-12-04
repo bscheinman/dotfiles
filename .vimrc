@@ -1,11 +1,30 @@
-set tabstop=8
-set shiftwidth=8
-set noexpandtab
+" vundle stuff
+set nocompatible
+filetype off
+
+set rtp +=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'majutsushi/tagbar'
+Plugin 'chrisbra/csv.vim'
+
+call vundle#end()
+filetype plugin indent on
+
+" tab stuff
+set tabstop=4
+set shiftwidth=4
+set expandtab
 set smarttab
 set autoindent
 set smartindent
 syntax on
 
+" pretty color stuff
 if has('gui_running')
 	colorscheme molokai
 	set lines=999 columns=999
@@ -23,6 +42,8 @@ else
 	nmap <silent><C-h> gT
 	imap <silent><C-h> <ESC>gTi
 endif
+
+let g:airline_theme='term'
 
 set colorcolumn=81
 set laststatus=2
@@ -51,8 +72,7 @@ imap <silent><C-k> <ESC><C-e>a
 nmap <silent><leader>n Go!!<Space>
 nmap <silent><leader>x :s/^!!/xx<CR>:w<CR>
 
-nmap <silent><leader>z :NERDTreeToggle<CR>
-nmap <leader>a :cscope find g 
+nmap <leader>a :cscope find g
 
 set wildignore+=*.o
 
@@ -60,7 +80,3 @@ let g:gitgutter_max_signs=10000
 
 command W w
 command Q q
-
-autocmd FileType python setlocal shiftwidth=4 tabstop=4 expandtab
-
-execute pathogen#infect()
