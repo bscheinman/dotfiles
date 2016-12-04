@@ -35,7 +35,7 @@ if has('gui_running')
 	imap <C-S-tab> <ESC>:tabprevious<cr>i
 else
 	set t_Co=256
-	colorscheme zellner
+	colorscheme slate
 
 	nmap <silent><C-l> gt
 	imap <silent><C-l> <ESC>gti
@@ -46,6 +46,7 @@ endif
 let g:airline_theme='term'
 
 set colorcolumn=81
+highlight ColorColumn ctermbg=red
 set laststatus=2
 set number
 set scrolloff=8
